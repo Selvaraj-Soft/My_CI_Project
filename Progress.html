@@ -1,0 +1,48 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>
+            <h2>Progress in HTML5 </h2>
+            <p>
+Enter a value between 1-100 : <input type="text" id="abc" 
+       oninput = "document.getElementById('prg').value = document.getElementById('abc').value"/>
+<br>
+<progress id="prg" max="100" value="0"> </progress>
+</p>
+</div>
+        <br><br>
+        <progress id="prg2" max="100" value="0"> </progress><output id='result'> 0 %</output><br> 
+        <input type='button' id ='button1' onclick="fun2()" value="Click me !"/><br><br>
+        
+        <strong>Note :</strong> Click the button to increase the progress bar ! 
+        
+    </body>
+    <script>
+    function fun1(){
+        data = document.getElementById("abc").value;
+        document.getElementById("prg").value = data;
+        console.log(data);
+    }
+    
+    function fun2(){
+        var data = 0;
+        
+        data = document.getElementById("prg2").value +10; 
+        document.getElementById("prg2").value = data;
+        console.log(data);
+        document.getElementById("result").value = document.getElementById("prg2").value + " %";
+        if(data >= 100) { alert('You have reached maximum number of clicks !');
+            document.getElementById("button1").disabled = true;
+        }
+    }
+    </script>
+    
+</html>
